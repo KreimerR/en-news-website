@@ -1,0 +1,20 @@
+@use "../globals/variables" as *;
+
+.pageName {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  padding: 30px 0;
+  border-bottom: $color-gray solid 1px;
+
+  &__route {
+    color: $color-dark-gray;
+    font-size: 0.7rem;
+  }
+
+  &__name {
+    color: $color-red;
+    font-size: 3rem;
+    text-transform: uppercase;
+  }
+}

@@ -1,0 +1,34 @@
+@use "./media-queries" as mq;
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: var(--font--body);
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  & main {
+    width: 65vw;
+  }
+}
+
+@include mq.desktop {
+  body {
+    & main {
+      width: 80vw;
+    }
+  }
+}
+
+@include mq.mobile {
+  body {
+    & main {
+      width: 90vw;
+    }
+  }
+}

@@ -1,0 +1,40 @@
+@use "../globals/variables" as *;
+
+.article {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 10px;
+  padding: 20px 0;
+  border-bottom: $color-gray solid 1px;
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  &-vertical {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 20px;
+    border-bottom: none;
+  }
+
+  &__info {
+    cursor: pointer;
+
+    &--title {
+      font-size: 1.2rem;
+      font-weight: 300;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    cursor: pointer;
+
+    &-vertical {
+      height: 250px;
+    }
+  }
+}

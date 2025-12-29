@@ -1,0 +1,138 @@
+@use "../globals/variables" as *;
+@use "../globals/media-queries" as mq;
+
+.fullArticle {
+  padding-top: 50px;
+
+  &__route {
+    display: block;
+    padding-bottom: 50px;
+    color: $color-dark-gray;
+    font-size: 0.9rem;
+  }
+
+  &__title {
+    width: 75%;
+    font-size: 2.5rem;
+    font-weight: 450;
+    line-height: 55px;
+  }
+
+  &__description {
+    padding-top: 20px;
+    padding-bottom: 50px;
+    display: block;
+    width: 75%;
+    font-size: 1.2rem;
+    line-height: 40px;
+  }
+
+  &__imageContainer {
+    &--image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    &--description {
+      display: block;
+      padding-top: 10px;
+      color: $color-dark-gray;
+    }
+  }
+
+  &__info {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 50px;
+
+    &--relatedArticles {
+      &--text {
+        font-size: 1.2rem;
+        font-weight: 450;
+      }
+    }
+
+    &--text {
+      padding: 50px;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+
+      &--details {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        &--author {
+          color: $color-dark-gray;
+        }
+      }
+
+      &--paragraph {
+        font-size: 1.4rem;
+        line-height: 40px;
+      }
+
+      &--heading {
+        font-size: 1.7rem;
+      }
+
+      &--imageContainer {
+        padding-bottom: 20px;
+
+        &--image {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+
+        &--description {
+          display: block;
+          padding-top: 10px;
+          color: $color-dark-gray;
+        }
+      }
+    }
+  }
+}
+
+@include mq.mobile {
+  .fullArticle {
+    &__title {
+      width: 100%;
+      font-size: 2.1rem;
+      line-height: 40px;
+    }
+
+    &__description {
+      width: 100%;
+      font-size: 1rem;
+      line-height: 25px;
+    }
+
+    &__info {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}
+
+@include mq.mobile-small {
+  .fullArticle {
+    &__info {
+      &--text {
+        padding: 15px;
+
+        &--paragraph {
+          font-size: 1.3rem;
+          line-height: 35px;
+        }
+
+        &--heading {
+          font-size: 1.6rem;
+        }
+      }
+    }
+  }
+}

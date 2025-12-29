@@ -1,0 +1,46 @@
+@use "../globals/variables" as *;
+
+.menu {
+  position: fixed;
+  top: 79px;
+  left: -1000px;
+  width: 40vw;
+  height: 100vh;
+  transition: left ease 0.3s;
+  z-index: 1001;
+
+  &-active {
+    left: 0px;
+  }
+
+  &__ul {
+    position: sticky;
+    top: 79px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-bottom: $color-gray solid 1px;
+    background-color: $color-white;
+
+    & li {
+      & a {
+        display: block;
+        width: 100%;
+        height: 100%;
+        padding: 20px;
+        border-bottom: $color-gray solid 1px;
+        list-style: none;
+        background-color: $color-white;
+        color: $color-black;
+        text-decoration: none;
+        font-size: 1.2rem;
+        transition: background-color ease 0.2s;
+        cursor: pointer;
+
+        &:hover {
+          background-color: $color-gray;
+        }
+      }
+    }
+  }
+}

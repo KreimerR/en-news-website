@@ -1,0 +1,19 @@
+@use "../globals/variables" as *;
+
+.footer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $color-white;
+  border-top: $color-gray solid 1px;
+  padding: 20px 0;
+
+  &__logo {
+    cursor: default;
+
+    &--red {
+      color: $color-red;
+    }
+  }
+}

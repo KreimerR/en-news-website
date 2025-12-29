@@ -1,0 +1,23 @@
+// Globals
+@use "./globals/globals";
+@use "./globals/variables";
+@use "./globals/media-queries";
+
+// Pages
+@use "./pages/home";
+@use "./pages/full-article";
+@use "./pages/health";
+@use "./pages/politics";
+@use "./pages/security";
+@use "./pages/sport";
+
+// Components
+@use "./components/article";
+@use "./components/big-article";
+@use "./components/column-article";
+@use "./components/article-section";
+@use "./components/row-articles";
+@use "./components/header";
+@use "./components/footer";
+@use "./components/page-name";
+@use "./components/menu";

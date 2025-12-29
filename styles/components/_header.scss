@@ -1,0 +1,96 @@
+@use "../globals/variables" as *;
+@use "../globals/media-queries" as mq;
+
+.header {
+  width: 100%;
+  height: 79px;
+  position: sticky;
+  top: 0;
+  left: 0;
+  padding: 20px 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $color-white;
+  border-bottom: $color-gray solid 1px;
+  z-index: 1000;
+
+  &__logo {
+    &--red {
+      color: $color-red;
+    }
+
+    & a {
+      text-decoration: none;
+      color: $color-black;
+    }
+  }
+
+  &__ul {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    list-style: none;
+
+    & a {
+      text-decoration: none;
+      color: $color-black;
+      font-size: 1.2rem;
+      font-weight: 450;
+      transition: color ease 0.2s;
+      transition: font-weight ease 0.2s;
+
+      &:hover {
+        color: $color-red;
+        font-weight: 500;
+      }
+    }
+  }
+
+  &__menu {
+    display: none;
+    cursor: pointer;
+
+    &--icon {
+      font-size: 1.2rem;
+    }
+  }
+
+  &__black {
+    position: fixed;
+    top: 79px;
+    left: 0;
+    width: 100vw;
+    height: calc(100vh - 79px);
+    background-color: rgb(0, 0, 0, 0%);
+    pointer-events: none;
+    transition: background-color ease 0.2s;
+
+    &-active {
+      background-color: rgb(0, 0, 0, 50%);
+      pointer-events: auto;
+    }
+  }
+}
+
+@include mq.mobile {
+  .header {
+    &__ul {
+      display: none;
+    }
+
+    &__menu {
+      display: block;
+    }
+  }
+}
+
+@include mq.mobile-small {
+  .header {
+    padding: 20px 50px;
+
+    &__logo {
+      font-size: 1.5rem;
+    }
+  }
+}

@@ -1,0 +1,54 @@
+@use "../globals/variables" as *;
+@use "../globals/media-queries" as mq;
+
+.columnArticle {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 50px;
+  padding: 20px 0;
+  border-bottom: $color-gray solid 1px;
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+
+    &--title {
+      font-size: 1.2rem;
+      font-weight: 400;
+    }
+
+    &--info {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      color: $color-dark-gray;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    cursor: pointer;
+  }
+}
+
+@include mq.mobile {
+  .columnArticle {
+    &__info {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+
+      &--description {
+        display: none;
+      }
+    }
+  }
+}
