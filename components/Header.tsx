@@ -6,6 +6,10 @@ import Link from "next/link"
 
 import Menu from "./Menu"
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faXmark } from "@fortawesome/free-solid-svg-icons"
+import { faBars } from "@fortawesome/free-solid-svg-icons"
+
 export default function Header() {
   const [menu, setMenu] = useState<boolean>(false)
 
@@ -37,9 +41,9 @@ export default function Header() {
 
         <div className="header__menu" onClick={() => setMenu((prev: boolean) => !prev)}>
           {menu ? (
-            <i className="fa-solid fa-xmark header__menu--icon" />
+            <FontAwesomeIcon icon={faXmark} className="header__menu--icon" />
           ) : (
-            <i className="fa-solid fa-bars header__menu--icon" />
+            <FontAwesomeIcon icon={faBars} className="header__menu--icon" />
           )}
         </div>
 
